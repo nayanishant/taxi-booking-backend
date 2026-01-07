@@ -1,7 +1,9 @@
 {
   "name": "taxi-booking-backend",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "build": "bun build src/index.ts --outdir dist --target bun",
+    "start": "bun run src/index.ts"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
