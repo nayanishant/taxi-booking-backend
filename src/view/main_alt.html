@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Ride Cost Calculator</title>
+    <link rel="stylesheet" href="ui/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Using FontAwesome for icons as seen in the image (user, suitcase, clock, calendar) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="card" style="color: '@text_clr'; background-color: '@primary_bg_clr'">
+        <div class="card-header">
+            <h2>Calculate the cost of your taxi ride</h2>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="departure">Departure address:</label>
+                <input type="text" id="departure" placeholder="Enter a location">
+            </div>
+
+            <button type="button" class="btn-extra-stopover" style="background-color: '@btn_clr'; color: '@text_clr'">+ Extra stopover</button>
+
+            <div class="form-group">
+                <label for="destination">Destination address:</label>
+                <input type="text" id="destination" placeholder="Enter a location">
+            </div>
+
+            <div class="form-group">
+                <label>Date & Time:</label>
+                <div class="date-time-row">
+                    <div class="input-icon-wrapper">
+                        <div class="icon-box"><i class="fa-regular fa-calendar"></i></div>
+                        <input type="text" class="input-with-icon" placeholder="Date">
+                    </div>
+                    <div class="input-icon-wrapper">
+                        <div class="icon-box"><i class="fa-regular fa-clock"></i></div>
+                        <input type="text" class="input-with-icon" placeholder="Time">
+                    </div>
+                </div>
+            </div>
+
+            <div class="return-row">
+                <label class="checkbox-container">
+                    <i class="fa-solid fa-arrows-rotate"></i> Return
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            <div class="counters-row">
+                <div class="counter-group">
+                    <label>Passengers:</label>
+                    <div class="counter-control">
+                        <div class="icon-box-small"><i class="fa-solid fa-user"></i></div>
+                        <button class="btn-minus">-</button>
+                        <span class="count-value">1</span>
+                        <button class="btn-plus">+</button>
+                    </div>
+                </div>
+                <div class="counter-group">
+                    <label>Hand luggage</label>
+                    <div class="counter-control">
+                        <div class="icon-box-small"><i class="fa-solid fa-briefcase"></i></div>
+                        <button class="btn-minus">-</button>
+                        <span class="count-value">0</span>
+                        <button class="btn-plus">+</button>
+                    </div>
+                </div>
+                <div class="counter-group">
+                    <label>Suitcases</label>
+                    <div class="counter-control">
+                        <div class="icon-box-small"><i class="fa-solid fa-suitcase"></i></div>
+                        <button class="btn-minus">-</button>
+                        <span class="count-value">0</span>
+                        <button class="btn-plus">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-row">
+                <div class="distance-group">
+                    <label>Distance (km):</label>
+                    <div class="distance-box"></div>
+                </div>
+                <button type="button" class="btn-continue" style="background-color: '@btn_clr'; color: '@text_clr'">Continue</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="ui/script.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-B5u9Vq3UeHor-vzaDzbFtAnX9Qd0MHo&libraries=places,geometry&callback=initAutocomplete" async defer></script>
+</body>
+</html>
